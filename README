@@ -1,0 +1,41 @@
+Module shapes contains one parent class named shape and four derived classes (Rectangle, Circle, Triangle, Trapezoid).
+
+Class Shape:
+Two attributes x and y with default value 0.00.
+The value of these attributes can be set using functions set_x , set_y.
+
+Class Circle:
+Two attributes x and y with default value 0.00.
+The value of these attributes can be set using functions set_x , set_y.
+Calculates the area of a circle with function area, assuming that radius is x-value.
+
+Class Rectangle:
+Two attributes x and y with default value 0.00.
+The value of these attributes can be set using functions set_x , set_y.
+Calculates the area of a rectangle with function area.
+
+Class Triangle:
+Two attributes x and y with default value 0.00.
+The value of these attributes can be set using functions set_x , set_y.
+Calculates the area of a triangle with function area.
+
+
+Class Trapezoid:
+Three attributes x, y and z with default value 0.00.
+The value of these attributes can be set using functions set_x , set_y, set_z.
+Calculates the area of a trapezoid with function area.
+
+Class ShapeCalculatorApp:
+This class defines the GUI application for the Shape Calculator.
+
+Attributes:
+result_label, calculate_button, input_entry2, input_entry3, input_label3, result_value, input_label2, input_entry1, input_label1, shape_option_menu, shape_label: These attributes represent various GUI elements used in the application.
+master: Represents the main tkinter window.
+Methods:
+__init__(self, master): Initializes the GUI application with default values and sets up the widgets.
+create_widgets(self): Creates and configures all the GUI elements, such as labels, entry fields, buttons, and option menus.
+update_input_fields(self, shape): Updates the input fields based on the selected shape and clears the result value.
+calculate_area(self): Calculates the area of the selected shape based on the user input and displays the result. Handles exceptions for invalid input values.
+
+
+
