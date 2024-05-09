@@ -1,3 +1,5 @@
+#Dmitrii Gusev
+# 05/08/2024
 import tkinter as tk
 from tkinter import messagebox
 import math
