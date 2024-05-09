@@ -1,5 +1,3 @@
-#Dmitrii Gusev
-
 import tkinter as tk
 from tkinter import messagebox
 import math
@@ -148,35 +146,47 @@ class ShapeCalculatorApp:
         try:
             if shape_type == "Circle":
                 radius = float(self.input_entry1.get())
-                circle = Circle()
-                circle.set_x(radius)
-                area = circle.area()
+                if radius >= 0:  # Check if radius is non-negative
+                    circle = Circle()
+                    circle.set_x(radius)
+                    area = circle.area()
+                else:
+                    raise ValueError("Radius cannot be negative")
             elif shape_type == "Rectangle":
                 length = float(self.input_entry1.get())
                 width = float(self.input_entry2.get())
-                rectangle = Rectangle()
-                rectangle.set_x(length)
-                rectangle.set_y(width)
-                area = rectangle.area()
+                if length >= 0 and width >= 0:  # Check if length and width are non-negative
+                    rectangle = Rectangle()
+                    rectangle.set_x(length)
+                    rectangle.set_y(width)
+                    area = rectangle.area()
+                else:
+                    raise ValueError("Length and width cannot be negative")
             elif shape_type == "Triangle":
                 base = float(self.input_entry1.get())
                 height = float(self.input_entry2.get())
-                triangle = Triangle()
-                triangle.set_x(base)
-                triangle.set_y(height)
-                area = triangle.area()
+                if base >= 0 and height >= 0:  # Check if base and height are non-negative
+                    triangle = Triangle()
+                    triangle.set_x(base)
+                    triangle.set_y(height)
+                    area = triangle.area()
+                else:
+                    raise ValueError("Base and height cannot be negative")
             elif shape_type == "Trapezoid":
                 base1 = float(self.input_entry1.get())
                 base2 = float(self.input_entry2.get())
                 height = float(self.input_entry3.get())
-                trapezoid = Trapezoid()
-                trapezoid.set_x(base1)
-                trapezoid.set_y(base2)
-                trapezoid.set_z(height)
-                area = trapezoid.area()
+                if base1 >= 0 and base2 >= 0 and height >= 0:  # Check if base1, base2, and height are non-negative
+                    trapezoid = Trapezoid()
+                    trapezoid.set_x(base1)
+                    trapezoid.set_y(base2)
+                    trapezoid.set_z(height)
+                    area = trapezoid.area()
+                else:
+                    raise ValueError("Bases and height cannot be negative")
             self.result_value.config(text=str(area))
-        except ValueError:
-            messagebox.showerror("Error", "Please enter valid numeric values.")
+        except ValueError as e:
+            messagebox.showerror("Error", str(e))
 
 
 def main():
